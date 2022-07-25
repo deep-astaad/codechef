@@ -1,15 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int func(vector<int> v,int i,int n,int sum){
-    if(i == n-1){
-        return v[i];
-    }
-    sum += func(v,i+1,n, sum);
-    sum += (v[i]*func(v,i+1,n, sum));
-    return sum;
-}
-
 int main()
 {
     int t;
@@ -17,12 +8,27 @@ int main()
     while (t--)
     {
         int n;
+        cin>>n;
         vector<int> v(n);
         for (int i = 0; i < n; ++i)
         {
             cin>>v[i];
         }
-        int ans = func(v,0,n,0);
+        long long ans = 0;
+        long long count = 0;
+        for (int i = 0; i < n; ++i)
+        {
+            if (v[i] != 0)
+            {
+                count++;
+            }
+            else{
+                ans+= (count*1LL*(count+1))/2;
+                count = 0;
+            }
+            
+        }
+        ans+= (count*1LL*(count+1))/2;
         cout<<ans<<endl;
     }
 
