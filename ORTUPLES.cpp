@@ -52,7 +52,7 @@ int main()
 				q=q>>1;
 				r=r>>1;
 				v[2]=v[2]>>1;
-				cout<<one<<sp;
+				// cout<<one<<sp;
 				if(one==1) {
 					ans=0;
 					break;
