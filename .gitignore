@@ -3,3 +3,6 @@
 /.gitignore
 /*.exe
 /settings.json
+.vscode/settings.json
+.gitignore
+/.gitignore
